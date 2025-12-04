@@ -278,14 +278,24 @@ a {
 
 .image-frame img {
     width: 100%;
-    max-width: 350px;
+    max-width: 300px;
     display: block;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
+/* Place profile image to the left and align download button to the right */
+.about-image {
+    justify-content: flex-start;
+}
+
+.about-text .btn-container {
+    justify-content: flex-end;
+}
+
 .btn-container {
-    text-align: left;
+    display: flex;
+    justify-content: flex-start;
     margin-top: 20px;
 }
 

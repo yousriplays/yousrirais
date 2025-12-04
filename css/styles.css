@@ -293,6 +293,21 @@ a {
     justify-content: flex-end;
 }
 
+/* Center and style the about bio text */
+.about-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-bio {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
 .btn-container {
     display: flex;
     justify-content: flex-start;

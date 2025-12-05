@@ -69,23 +69,55 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Contact Form Handler
+// Contact Form Handler - Web3Forms
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.querySelector('.contact-form');
     
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
             const submitBtn = this.querySelector('button[type="submit"]');
             const originalText = submitBtn.textContent;
             
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Sending...';
-            
-            // Restore button text after submission
-            setTimeout(() => {
-                submitBtn.textContent = originalText;
+            try {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+                
+                const formData = new FormData(this);
+                
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    submitBtn.textContent = '✓ Message Sent Successfully!';
+                    submitBtn.style.backgroundColor = '#10b981';
+                    this.reset();
+                    
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.style.backgroundColor = '';
+                        submitBtn.disabled = false;
+                    }, 3000);
+                } else {
+                    throw new Error(data.message || 'Submission failed');
+                }
+            } catch (error) {
+                submitBtn.textContent = '✗ Error - Try Again';
+                submitBtn.style.backgroundColor = '#ef4444';
                 submitBtn.disabled = false;
-            }, 2000);
+                
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.backgroundColor = '';
+                }, 3000);
+                
+                console.error('Form submission error:', error);
+            }
         });
     }
 });

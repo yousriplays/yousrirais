@@ -81,11 +81,11 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending...';
             
-            // Form will submit naturally after 500ms
+            // Restore button text after submission
             setTimeout(() => {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
-            }, 500);
+            }, 2000);
         });
     }
 });

@@ -142,7 +142,8 @@
                         </div>
                     </div>
                     <div class="contact-form-container scroll-morph">
-                        <form class="contact-form" action="https://formsubmit.co/raisyousri27@gmail.com" method="POST">
+                        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="f6f76564-1806-4a51-a179-f20f6ab51d55">
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" id="name" name="name" required>
@@ -159,9 +160,7 @@
                                 <label for="message">Message</label>
                                 <textarea id="message" name="message" rows="5" required></textarea>
                             </div>
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_autoresponse" value="Thank you for contacting me! I'll get back to you soon.">
-                            <input type="hidden" name="_next" value="https://yousriplays.github.io/yousrirais/">
+                            <input type="hidden" name="redirect" value="https://yousriplays.github.io/yousrirais/">
                             <button type="submit" class="btn btn-primary">Send Message</button>
                         </form>
                     </div>

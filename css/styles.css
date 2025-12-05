@@ -206,8 +206,8 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
+    justify-content: center;
+    gap: 80px;
 }
 
 .hero-title {
@@ -249,16 +249,9 @@ a {
     object-fit: cover;
 }
 
-/* Large Profile Image Container - Between blue and gray */
-.hero-profile-container {
-    position: relative;
-    z-index: 10;
-    flex: 0 0 auto;
-}
-
 .profile-large {
-    width: 280px;
-    height: 280px;
+    width: 400px;
+    height: 400px;
     border-radius: 12px;
     overflow: hidden;
     background-color: var(--bg-primary);
@@ -289,21 +282,21 @@ a {
     background-color: rgba(28, 35, 49, 0.95);
     border: 2px solid var(--accent);
     border-radius: 12px;
-    padding: 30px;
-    max-width: 450px;
+    padding: 40px;
+    max-width: 550px;
     position: relative;
     z-index: 5;
     text-align: left;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    flex: 1;
+    flex: 0 0 auto;
 }
 
 .profile-label p {
     color: var(--text-secondary);
-    font-size: 0.9rem;
-    line-height: 1.7;
-    margin-bottom: 12px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
     word-break: break-word;
 }
 
